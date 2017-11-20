@@ -1,0 +1,47 @@
+//Variables
+
+//Global
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #fff;
+}
+
+@mixin width ($max-width, $height) {
+	max-width: $max-width;
+	width: 100%;
+	height: $height;
+}
+@mixin center-content{
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin breakpoint{
+	@media  (max-width: 600px){
+		@content
+	}
+}
+
+.container{
+	margin: 0 auto;
+	max-width: $max-width;    
+	width: 100%;
+
+	&-flex{
+		display: flex;
+	}
+}
+.fixed-bar{
+	position: fixed;
+	top: 0;
+	@include width(1024px, 80px);
+	@include center-content();
+}
+
+
+
+
